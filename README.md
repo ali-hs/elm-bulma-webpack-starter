@@ -16,7 +16,7 @@ yarn run watch
 yarn run dev
 ```
 
-## Compile app with production mode and minification
+## Compile app for production
 ```
 yarn run prod
 ```
