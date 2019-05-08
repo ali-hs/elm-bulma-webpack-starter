@@ -64,10 +64,10 @@ view model =
             [ div [ class "hero-body" ]
                 [ div [ class "container" ]
                     [ h1 [ class "title" ]
-                        [ text "Hello Elm" ]
+                        [ text "Elm!" ]
                     , h2
                         [ class "subtitle" ]
-                        [ text "Reliable apps with ZERO runtime errors." ]
+                        [ text "A delightful language to build performant and reliable apps with ZERO runtime exceptions." ]
                     ]
                 ]
             ]
