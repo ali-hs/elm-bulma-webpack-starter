@@ -54,7 +54,8 @@ view : Model -> Browser.Document Msg
 view model =
     { title = "Url Interceptor" ++ "-" ++ Url.toString model.url
     , body =
-        [ nav [ class "navbar" ]
+        [ debugUI False
+        , nav [ class "navbar" ]
             [ div [ class "navbar-menu" ]
                 [ a [ class "navbar-item" ] [ text "Home" ]
                 , a [ class "navbar-item" ] [ text "About" ]
@@ -89,3 +90,19 @@ main =
         , onUrlChange = UrlChanged
         , onUrlRequest = LinkClicked
         }
+
+
+debugUI : Bool -> Html msg
+debugUI enabled =
+    let
+        debug_style =
+            case enabled of
+                True ->
+                    """
+                    :not(path):not(g){color:hsla(210,100%,100%,.9)!important;background:hsla(210,100%,50%,.5)!important;outline:solid .25rem hsla(210,100%,100%,.5)!important;box-shadow:none!important}
+                    """
+
+                False ->
+                    ""
+    in
+    Html.node "style" [] [ text debug_style ]
